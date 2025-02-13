@@ -1,0 +1,148 @@
+.sticky-video {
+    position: fixed;
+    left: -300px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 970px;
+    border-radius: 10px;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+.special-text {
+    color: #b99aaa; /* Pink shade */
+    font-weight: bold; /* Optional: Makes text bold */
+}
+
+.sticky-picture {
+    position: fixed; /* Keeps it fixed while scrolling */
+    right: 10px; /* Adjusts position from the right */
+    top: 50%; /* Centers it vertically */
+    transform: translateY(-50%); /* Adjusts to perfect center */
+    width: 325px; /* Adjust as needed */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-picture img {
+    width: 100%; /* Makes sure the image fits inside */
+    border-radius: 10px;
+}
+
+/* Lightbox Styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Add the button styles below */
+#openVideo {
+    background: linear-gradient(135deg, #ff66b2, #ff3399); /* Gradient background */
+    color: white;
+    border: none;
+    padding: 12px 30px; /* Add more padding for a larger button */
+    font-size: 18px; /* Make the font a bit larger */
+    font-weight: bold;
+    border-radius: 50px; /* Soft rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover and focus effects */
+    text-transform: uppercase; /* Uppercase text */
+    outline: none; /* Remove default outline */
+}
+
+/* Button hover effect */
+#openVideo:hover {
+    background: linear-gradient(135deg, #ff3399, #ff66b2); /* Reverse gradient on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+/* Button focus effect */
+#openVideo:focus {
+    box-shadow: 0 0 0 3px rgba(255, 51, 153, 0.5); /* Add a focus ring with matching color */
+}
+
+/* Button active effect */
+#openVideo:active {
+    transform: translateY(2px); /* Button presses down when clicked */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow goes back to normal */
+}
+
+/* Photo Container Styles */
+.photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff; /* Soft white background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the photo frame */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    max-width: 90%; /* Adjust the max width */
+    margin: 10px 0; /* Space between each photo */
+    overflow: hidden; /* Prevent overflow for images */
+}
+
+/* Hover Effect */
+.photo:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Photo Styling */
+.photo img {
+    width: 100%; /* Make the image fill the container width */
+    max-width: 400px; /* Limit the maximum width of images */
+    height: auto;
+    border-radius: 10px; /* Rounded image corners */
+    transition: transform 0.3s ease; /* Smooth image zoom effect */
+}
+
+/* Image zoom on hover */
+.photo:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Caption Styling */
+.caption {
+    font-size: 1em;
+    color: #555;
+    max-width: 250px;
+    text-align: center; /* Center-align captions */
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+    font-style: italic;
+}

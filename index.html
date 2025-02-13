@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+   
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I wonder what this is</title>
+    <style>
+        .video-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .video-popup video {
+            width: 1000px;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .show {
+            display: block;
+            opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 0 !important;
+        }
+         
+        .sticky-video {
+        position: fixed;
+        left: -300px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 970px;
+        border-radius: 10px;
+        box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
+        
+        }
+        
+
+        body {
+           
+            
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            color: #c9abba;
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            display: inline-block;
+        }
+        p {
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .photo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .photo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            max-width: 90%;
+        }
+        .photo img {
+            width: 300px;
+            border-radius: 10px;
+        }
+        .caption {
+            font-size: 1em;
+            color: #555;
+            max-width: 200px;
+            margin: 0 20px;
+        }
+        .photo:nth-child(odd) {
+            flex-direction: row;
+        }
+        .photo:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .heart-container {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            animation: ripple 2s infinite ease-out;
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        
+       
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const photos = document.querySelectorAll(".photo");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+            photos.forEach(photo => observer.observe(photo));
+        });
+    </script>
+</head>
+<body>
+    <audio id="backgroundMusic"  loop>
+        <source src="guitar.mp4" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="protected-content" style="display: none;">
+        <video class="sticky-video" autoplay loop muted>
+            <source src="SelcaVid.mp4" type="video/mp4">
+             Your browser does not support the video tag.
+        </video>
+        <div class="sticky-picture">
+            <img src="SelcaPic.jpg" alt="Sticky Picture">
+        </div>    
+        <div class="container">
+            <h1>Happy Valentine's Day, Snizhana</h1>
+            <div class="heart-container">
+                <div class="heart" style="top: 20px; left: 50%; animation-delay: 0s;">❤️</div>
+                <div class="heart" style="top: 70px; left: 215%; animation-delay: 0s;">❤️</div>
+                <div class="heart" style="top: 70px; left: -130%; animation-delay: 0s;">❤️</div>
+                <div class="heart" style="top: 110px; left: 50%; animation-delay: 0s;">❤️</div>
+            </div>
+            <p class="special-text">I have put together a small album with pictures that I like a lot. I like all of your pictures so you have no idea how much I had to resist myself to not put my entire Album of you. You can click on each picture to look at it individually! and make sure your volume is up when doing so cos I have a surprise:). I hope you enjoy this small valentines gift!</p>
+            <div class="photo-container">
+                <div class="photo"><img src="1.jpg" alt="Us together"><div class="caption">October Markt Yayyyy 💕</div></div>
+                <div class="photo"><div class="caption"> The view was amazinggg🌅</div><img src="2.jpg" alt="Vacation"></div>
+                <div class="photo"><img src="3.jpg" alt="Laughing together"><div class="caption">Cutie patootie 😆</div></div>
+                <div class="photo"><div class="caption">I like this picture 🎉</div><img src="4.jpg" alt="Celebration"></div>
+                <div class="photo"><img src="5.jpg" alt="Adventure"><div class="caption">This also 🥰</div></div>
+                <div class="photo"><div class="caption">Badass picture of you with gun</div><img src="6.jpg" alt="Cozy moment"></div>
+                <div class="photo"><img src="7.jpg" alt="Romantic night"><div class="caption">Goofy picture ✨</div></div>
+                <div class="photo"><div class="caption">Second Hamburg trip :) </div><img src="8.jpg" alt="Goofy times"></div>
+                <div class="photo"><img src="9.jpg" alt="Beach day"><div class="caption">We finally match in clothes!!</div></div>
+                <div class="photo"><div class="caption">More pictures from Hamburg 💖</div><img src="10.jpg" alt="Anniversary"></div>
+                <div class="photo"><img src="11.jpg" alt="New Memory"><div class="caption">I look like im freezing lol 💗</div></div>
+                <div class="photo"><div class="caption">Christmas Marktttt 💞</div><img src="12.jpg" alt="Special place"></div>
+                <div class="photo"><img src="13.jpg" alt="Sweet embrace"><div class="caption">Cute picture</div></div>
+                <div class="photo"><div class="caption">I forgot to add this goofy picture 🤪</div><img src="14.jpg" alt="Goofy adventures"></div>
+                <div class="photo"><img src="15.jpg" alt="Together Forever"><div class="caption">Who is this divaaaaa 💍</div></div>
+                <div class="photo"><div class="caption">Im so sad i couldnt get to see this dress in person </div><img src="16.jpg" alt="Pure joy"></div>
+                <div class="photo"><img src="17.jpg" alt="Lovely walk"><div class="caption">Your Birthdayyyyyy 🎉 </div></div>
+                <div class="photo"><div class="caption">10/10 would eat again 😘</div><img src="18.jpg" alt="Hugs & kisses"></div>
+                <div class="photo"><img src="19.jpg" alt="Picnic day"><div class="caption">This was too gooddd</div></div>
+                <div class="photo"><div class="caption">Literally disney princess 🌙</div><img src="21.jpg" alt="Unforgettable night"></div>
+                <div class="photo"><img src="22.jpg" alt="Picnic day"><div class="caption">Lethal facecard</div></div>
+                <div class="photo"><div class="caption">Our Berlin tripppp!!! 🌙</div><img src="23.jpg" alt="Unforgettable night"></div>
+                <div class="photo"><img src="24.jpg" alt="Picnic day"><div class="caption">I have too many favorite pictures from thisss</div></div>
+                <div class="photo"><div class="caption">I know I am a good photographer 😆</div><img src="25.jpg" alt="Unforgettable night"></div>
+                <div class="photo"><img src="26.jpg" alt="Picnic day"><div class="caption">But you are an even better model 💖</div></div>
+                <div class="photo"><div class="caption">Look at thissssss🫠 </div><img src="27.jpg" alt="Unforgettable night"></div>
+                <div class="photo"><img src="28.jpg" alt="Picnic day"><div class="caption">I want to say I am better at taking pictures of you than Jackie 😤</div></div>
+                <div class="photo"><div class="caption">But these pictures are too good!😭 I will practice 😤</div><img src="29.jpg" alt="Unforgettable night"></div>
+                <div class="photo"><img src="30.jpg" alt="Picnic day"><div class="caption">RIP our throat and ears</div></div>
+                <div class="photo"><div class="caption">Another one of my fav pics 🫠</div><img src="31.jpg" alt="Unforgettable night"></div>
+            </div>
+            <p class="special-text">This is it for our little album! I hope you liked it! I love you a lot! Let's create more memories together! You can click on the button below if you want.</p>
+            <button id="openVideo">Where is this music coming from?</button>
+        <div id="videoPopup" class="video-popup">
+            <button class="close-btn" id="closeVideo">X</button>
+            <video id="musicVideo" loop muted>
+                <source src="guitar.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+            
+
+    </div>
+    <!-- Lightbox Container (Initially Hidden) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+   
+</body>
+</html>
+
