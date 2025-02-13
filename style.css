@@ -6,8 +6,20 @@
     width: 970px;
     border-radius: 10px;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
-    
 }
+
+@media (max-width: 768px) {
+    .sticky-video {
+        width: 80%;  /* Reduce width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .sticky-video {
+        display: none;  /* Hide on smaller screens */
+    }
+}
+
 
 .special-text {
     color: #b99aaa; /* Pink shade */
@@ -146,3 +158,73 @@
     font-family: 'Arial', sans-serif;
     font-style: italic;
 }
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping for smaller screens */
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo img {
+    width: 100%;
+    max-width: 300px;  /* You can adjust the max-width to fit your design */
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+@media (max-width: 768px) {  /* For tablets and smaller screens */
+    h1 {
+        font-size: 2em;
+    }
+
+    .caption {
+        font-size: 0.9em;
+    }
+
+    .special-text {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {  /* For mobile phones */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .caption {
+        font-size: 0.8em;
+    }
+
+    .special-text {
+        font-size: 0.9em;
+    }
+}
+
+.heart-container {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .heart-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heart-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
