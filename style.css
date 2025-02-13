@@ -67,6 +67,7 @@
     top: 20px;
     right: 40px;
     font-size: 40px;
+    padding: 10px 20px; /* Adjust padding as needed */
     color: white;
     cursor: pointer;
     font-weight: bold;
@@ -271,6 +272,7 @@ h1 {
     .close {
         top: 10px;
         right: 20px;
+        padding: 10px 20px; /* Adjust padding as needed */
         font-size: 30px;
     }
 }
