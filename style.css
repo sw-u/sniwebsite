@@ -266,3 +266,11 @@ h1 {
         height: 40vh; /* Make it smaller on mobile screens */
     }
 }
+
+@media (max-width: 768px) {
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}

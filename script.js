@@ -64,3 +64,14 @@ document.getElementById("closeVideo").addEventListener("click", function() {
 });
 
 
+const closeButton = document.querySelector('.close');
+const popup = document.querySelector('.popup'); // Assuming .popup is your modal or video
+
+closeButton.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+
+// For mobile devices, consider adding touchend as well
+closeButton.addEventListener('touchend', () => {
+    popup.style.display = 'none';
+});
