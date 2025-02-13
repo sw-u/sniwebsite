@@ -239,7 +239,7 @@ h1 {
     display: none;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    width: 80vw; /* Use 80% of the viewport width */
+    width: 70vw; /* Use 80% of the viewport width */
     height: 60vh; /* Use 60% of the viewport height */
     max-width: 1000px; /* Set a max width for large screens */
     max-height: 700px; /* Set a max height for large screens */
