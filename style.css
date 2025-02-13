@@ -228,3 +228,41 @@ h1 {
     }
 }
 
+.video-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    width: 80vw; /* Use 80% of the viewport width */
+    height: 60vh; /* Use 60% of the viewport height */
+    max-width: 1000px; /* Set a max width for large screens */
+    max-height: 700px; /* Set a max height for large screens */
+}
+
+.video-popup video {
+    width: 100%; /* Make the video responsive */
+    height: 100%; /* Ensure the video scales correctly */
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {  /* Tablet or mobile screens */
+    .video-popup {
+        width: 90vw; /* Reduce width on smaller screens */
+        height: 50vh; /* Reduce height on smaller screens */
+        max-width: none; /* Remove max-width for smaller screens */
+        max-height: none; /* Remove max-height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {  /* For very small screens like phones */
+    .video-popup {
+        width: 95vw; /* Take almost full width on smaller devices */
+        height: 40vh; /* Make it smaller on mobile screens */
+    }
+}
