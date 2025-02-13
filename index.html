@@ -8,23 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I wonder what this is</title>
     <style>
-        .video-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .video-popup video {
-            width: 1000px;
-            border-radius: 10px;
-        }
+       
 
         .close-btn {
             position: absolute;
@@ -87,36 +71,10 @@
         p {
             animation: fadeIn 2.5s ease-in-out;
         }
-        .photo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .photo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-            max-width: 90%;
-        }
-        .photo img {
-            width: 300px;
-            border-radius: 10px;
-        }
-        .caption {
-            font-size: 1em;
-            color: #555;
-            max-width: 200px;
-            margin: 0 20px;
-        }
+       
+        
+        
+      
         .photo:nth-child(odd) {
             flex-direction: row;
         }
